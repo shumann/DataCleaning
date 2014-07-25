@@ -1,4 +1,4 @@
-## The Program meets the following intent: It: 
+## The Course Program meets the following intent: It: 
 
 # 1. Merges the training and the test sets to create one data set.
 # 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
@@ -20,53 +20,53 @@
 
 ## 1. download file 
 
-download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", "~/RPractice/Assignment/GetAndCleanData/data/getdata-projectfiles-UCI-HAR-Dataset.zip", method="auto")
+download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", "getdata-projectfiles-UCI-HAR-Dataset.zip", method="auto")
 
 ## 2. unzip the file
 
-unzip("~/RPractice/Assignment/GetAndCleanData/data/getdata-projectfiles-UCI-HAR-Dataset.zip")
+unzip("getdata-projectfiles-UCI-HAR-Dataset.zip")
 
 
 ## Read data into tables
 
 ## Read all common data 
-feature_all <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/features.txt")
-act_label <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/activity_labels.txt")
+feature_all <- read.table("~/UCI HAR Dataset/features.txt")
+act_label <- read.table("~/UCI HAR Dataset/activity_labels.txt")
 
 ## read all train data
-X_train <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/train/X_train.txt")
-Y_train <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/train/y_train.txt")
-sub_train <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/train/subject_train.txt")
+X_train <- read.table("~/UCI HAR Dataset/train/X_train.txt")
+Y_train <- read.table("~/UCI HAR Dataset/train/y_train.txt")
+sub_train <- read.table("~/UCI HAR Dataset/train/subject_train.txt")
 
-body_acc_x_train <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/train/inertial Signals/body_acc_x_train.txt")
-body_acc_y_train <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/train/inertial Signals/body_acc_y_train.txt")
-body_acc_z_train <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/train/inertial Signals/body_acc_z_train.txt")
+body_acc_x_train <- read.table("~/UCI HAR Dataset/train/inertial Signals/body_acc_x_train.txt")
+body_acc_y_train <- read.table("~/UCI HAR Dataset/train/inertial Signals/body_acc_y_train.txt")
+body_acc_z_train <- read.table("~/UCI HAR Dataset/train/inertial Signals/body_acc_z_train.txt")
 
-body_gyro_x_train <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/train/inertial Signals/body_gyro_x_train.txt")
-body_gyro_y_train <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/train/inertial Signals/body_gyro_y_train.txt")
-body_gyro_z_train <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/train/inertial Signals/body_gyro_z_train.txt")
+body_gyro_x_train <- read.table("~/UCI HAR Dataset/train/inertial Signals/body_gyro_x_train.txt")
+body_gyro_y_train <- read.table("~/UCI HAR Dataset/train/inertial Signals/body_gyro_y_train.txt")
+body_gyro_z_train <- read.table("~/UCI HAR Dataset/train/inertial Signals/body_gyro_z_train.txt")
 
-total_acc_x_train <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/train/inertial Signals/total_acc_x_train.txt")
-total_acc_y_train <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/train/inertial Signals/total_acc_y_train.txt")
-total_acc_z_train <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/train/inertial Signals/total_acc_x_train.txt")
+total_acc_x_train <- read.table("~/UCI HAR Dataset/train/inertial Signals/total_acc_x_train.txt")
+total_acc_y_train <- read.table("~/UCI HAR Dataset/train/inertial Signals/total_acc_y_train.txt")
+total_acc_z_train <- read.table("~/UCI HAR Dataset/train/inertial Signals/total_acc_x_train.txt")
 
 
 ## read all test data
-X_test <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/test/X_test.txt")
-Y_test <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/test/y_test.txt")
-sub_test <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/test/subject_test.txt")
+X_test <- read.table("~/UCI HAR Dataset/test/X_test.txt")
+Y_test <- read.table("~/UCI HAR Dataset/test/y_test.txt")
+sub_test <- read.table("~/UCI HAR Dataset/test/subject_test.txt")
 
-body_acc_x_test <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/test/inertial Signals/body_acc_x_test.txt")
-body_acc_y_test <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/test/inertial Signals/body_acc_y_test.txt")
-body_acc_z_test <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/test/inertial Signals/body_acc_z_test.txt")
+body_acc_x_test <- read.table("~/UCI HAR Dataset/test/inertial Signals/body_acc_x_test.txt")
+body_acc_y_test <- read.table("~/UCI HAR Dataset/test/inertial Signals/body_acc_y_test.txt")
+body_acc_z_test <- read.table("~/UCI HAR Dataset/test/inertial Signals/body_acc_z_test.txt")
 
-body_gyro_x_test <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/test/inertial Signals/body_gyro_x_test.txt")
-body_gyro_y_test <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/test/inertial Signals/body_gyro_y_test.txt")
-body_gyro_z_test <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/test/inertial Signals/body_gyro_z_test.txt")
+body_gyro_x_test <- read.table("~/UCI HAR Dataset/test/inertial Signals/body_gyro_x_test.txt")
+body_gyro_y_test <- read.table("~/UCI HAR Dataset/test/inertial Signals/body_gyro_y_test.txt")
+body_gyro_z_test <- read.table("~/UCI HAR Dataset/test/inertial Signals/body_gyro_z_test.txt")
 
-total_acc_x_test <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/test/inertial Signals/total_acc_x_test.txt")
-total_acc_y_test <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/test/inertial Signals/total_acc_y_test.txt")
-total_acc_z_test <- read.table("~/RPractice/Assignment/GetAndCleanData/data/UCI HAR Dataset/test/inertial Signals/total_acc_x_test.txt")
+total_acc_x_test <- read.table("~/UCI HAR Dataset/test/inertial Signals/total_acc_x_test.txt")
+total_acc_y_test <- read.table("~/UCI HAR Dataset/test/inertial Signals/total_acc_y_test.txt")
+total_acc_z_test <- read.table("~/UCI HAR Dataset/test/inertial Signals/total_acc_x_test.txt")
 
 
 ## combine ALL TRAIN Data starting with subject (from sub_train), label (from Y_train), and finally feature vectors from X_train.
