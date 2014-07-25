@@ -1,4 +1,4 @@
-## The Course Program meets the following intent: It: 
+## The Course Program meets the following intent. The Program:
 
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
@@ -6,7 +6,7 @@
 4. Appropriately labels the data set with descriptive variable names. 
 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
-## Programmer's Notes:
+## Programmer's Note:
 
 1. To aid the peer review only one file was created with complete data sourcing and cleaning.
 2. All means and standard deviations were extracted. No programmer's judgement was applied to arrive at the inclusion or exclusion of means.
